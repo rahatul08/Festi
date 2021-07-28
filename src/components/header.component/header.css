@@ -41,6 +41,145 @@
 .nav-area .nav a:hover{
     color: darkgoldenrod;
 }
+
+@media only screen and (max-width: 999px){
+    .menu{
+        max-width: 98%;
+    }
+}
+@media only screen and (min-width: 850px){
+    .sidebar{
+        display: none;
+    }
+    .desktop-nav{
+        display: block;
+    }
+    .mobile-bar{
+        display: none;
+    }
+}
+@media only screen and (max-width: 850px){
+    .mobile-bar{
+        display: block;
+    }
+    .menu {
+        background-color: #ffffff;
+        padding: 48px 10px;
+        border-radius: 0 181px 0 272px;
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        max-width:100%;
+        height:100vh;
+    }
+    .menu::after{
+        width: 10px;
+    }
+    .sidebar{
+        display: block;
+    }
+    .desktop-nav{
+        display: none;
+    }
+    .sidebar{
+        position: fixed;
+        top: 0;
+        left:-250px;
+        background: #ad5389;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        width: 250px;
+        height: 100%;
+        transition: .3s;
+    }
+
+    .menu ul{
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .menu ul li{
+        list-style: none;
+    }
+    .menu ul li a{
+       border-bottom:1px  dashed darkgoldenrod;
+    }
+    .offer {
+        text-align: center !important;
+        background: #bbbbbb1f;
+    }.offer p{
+        padding: 8px 0;
+         }
+
+
+    .sidebarBtn{
+        cursor: pointer;
+    }
+
+    .sidebarBtn span{
+        display: block;
+        width: 35px;
+        height: 3px;
+        background-color: #262626;
+        position: absolute;
+        top:24px;
+        transition: .3s;
+    }
+
+    .sidebarBtn span:before{
+        content: '';
+        width: 100%;
+        height: 3px;
+        background-color: #262626;
+        position: absolute;
+        top: -10px;
+        left: 0;
+        transition: .3s;
+    }
+
+    .sidebarBtn span:after{
+        content: '';
+        width: 100%;
+        height: 3px;
+        background-color: #262626;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        transition: .3s;
+    }
+
+    .active{
+        left: 0;
+    }
+.close{
+        position: absolute;
+        top: 6px;
+        right: 10px;
+}
+    .close .icon{
+        cursor: pointer;
+    }
+    .sidebarBtn.toggle span{
+        background-color: #fff;
+    }
+
+    .sidebarBtn.toggle span:before{
+        top:0;
+        transform: rotate(-45deg);
+    }
+
+    .sidebarBtn.toggle span:after{
+        top:0;
+        transform: rotate(45deg);
+    }
+
+
+
+
+}
+
+
+
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Work Sans', sans-serif;*/

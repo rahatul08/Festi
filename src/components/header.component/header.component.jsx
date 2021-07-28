@@ -1,83 +1,55 @@
-import React from "react";
+import React, {Component} from 'react';
 import "./header.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, } from "react-router-dom";
+import "./header.css";
+import Menu from "./menu-bar-item/Menu-bar";
+import Logo from "./menu-bar-item/logo-bar";
+import IconNav from "./menu-bar-item/Icon_navbar";
+import MobileMenu from "./Mobile.menu";
 import Icon_svg from "../../Data/Icon.svg";
-import "./header.css";
-import Data_img from "../../Data/Data_img";
+class Header extends Component {
 
-const Header = () => {
-    return (
-        <Router>
-            <div className="header-area">
-                <div className="top-header">
-                    <div className="offer text-center">
-                        <p>
-                            New Offer of this weekend only get <span className="text-danger">50%</span> flat
-                        </p>
-                    </div>
-                </div>
-                <div className="menu-area">
-                    <div className="container menu">
-                        <nav className="d-flex align-items-center justify-content-between">
-                            <div className="logo-area">
-                                <Link to="/" className="nav-link">
-                                    <img src={Data_img.logo} alt="logo" />
-                                </Link>
-                            </div>
-                            <div className="d-flex align-item-center nav-area">
-                                <ul className="nav">
-                                    <li className="nav-item">
-                                        <Link className="nav-link">Home</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link">About Us</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link">Pages</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link">Shop</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link">Blog</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link">ContactUs</Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="right-nav d-flex align-item-center">
-                                <ul className="nav">
-                                    <li className="nav-item">
-                                        <Link className="nav-link ">
-                                            <img src={Icon_svg.user} alt="user" className="icon" />
 
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link position-relative">
-                                            <img src={Icon_svg.heart} alt="like" className="icon" />
-                                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                99+
-                                            </span>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link position-relative">
-                                            <img src={Icon_svg.shopping} alt="" className="icon" />
-                                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill  bg-warning text-light">
-                                                99+
-                                            </span>
-                                        </Link>
-                                    </li>
-                                </ul>
+    render() {
+        return (
+                <Router>
+                    <div className="header-area">
+                        <div className="top-header">
+                            <div className="offer text-center">
+                                <p>
+                                    New Offer of this weekend only get <span className="text-danger">50%</span> flat
+                                </p>
                             </div>
-                        </nav>
+                        </div>
+                        <div className="menu-area">
+                            <div className="container menu desktop-nav">
+                                <nav className="d-flex align-items-center justify-content-between ">
+                                    <Logo/>
+                                    <Menu/>
+                                    <IconNav/>
+                                </nav>
+                            </div>
+                            <div className="mobile-bar container">
+                                <nav className="d-flex align-items-center justify-content-between ">
+                                    <Logo/>
+                                    <IconNav/>
+                                    <div className="bar">
+                                        <img src={Icon_svg.menu} alt="" className={'icon sidebarBtn'} />
+                                    </div>
+                                </nav>
+                            </div>
+                            <MobileMenu className="d-sm-block d-md-none d-lg-none d-xl-none"/>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </Router>
-    );
-};
+                </Router>
+        );
+    }
+}
 
 export default Header;
+
+
+
+
+
+
